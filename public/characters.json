@@ -1,0 +1,54 @@
+{
+  "characters" : [
+    {
+      "firstName" : "Tina",
+      "lastName" : "Carter",
+      "image" : "tina-carter.jpg"
+    },
+    {
+      "firstName": "Andrew",
+      "lastName" : "Briggs",
+      "image" : "andrew-briggs.jpg"
+    },
+    {
+      "firstName": "Masood",
+      "lastName" : "Ahmed",
+      "image" : "masood-ahmed.jpg"
+    },
+    { 
+      "firstName": "Dorothy",
+      "lastName" : "Branning",
+      "image" : "dorothy-branning.jpg"
+    },
+    {
+      "firstName": "Jack",
+      "lastName" : "Branning",
+      "image" : "jack-branning.jpg"
+    },
+    {
+      "firstName": "Les",
+      "lastName" : "Coker",
+      "image" : "les-coker.jpg"
+    },
+    {
+      "firstName": "Linda",
+      "lastName" : "Carter",
+      "image" : "linda-carter.jpg"
+    },
+    {
+      "firstName": "Jay",
+      "lastName" : "Brown",
+      "image" : "jay-brown.jpg"
+    },
+    {
+      "firstName" : "Paul",
+      "lastName" : "Coker",
+      "image" : "paul-coker.jpg"
+    },
+    {
+      "firstName" : "Steven",
+      "lastName" : "Beale",
+      "image" : "steven-beale.jpg"
+    }
+  ]
+}
