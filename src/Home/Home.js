@@ -3,13 +3,8 @@ import {
   Link
 } from 'react-router-dom'
 import './Home.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faStroopwafel);
-
-// const columnStyle = { display: 'inline-block', width: '50%', 'verticalAlign': 'top' };
+import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Home extends Component {
   constructor(props) {
@@ -80,7 +75,7 @@ class Home extends Component {
       return (
         <div key={index} className={`character border-${this.getRandomInt(5)}`}>
           <Link to={`/${character.id}`} className="viewFull">
-            <i className="fas fa-expand">View Full</i>
+            <FontAwesomeIcon icon={faExpandArrowsAlt} />
           </Link>
           <div className={"name"}>
             <h2>{character.firstName} {character.lastName}</h2>
