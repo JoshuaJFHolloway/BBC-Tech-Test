@@ -33,7 +33,7 @@ Complete the steps below in order.
 9. Font Awesome has been installed as a dependency ("font-awesome"). You will find the Font Awesome library inside the ‘node_modules‘ folder. Use it to replace the ‘view full’ text with an appropriate icon.(x)
 10. Add a Google Font to the page, selecting a different one for Headings and bios.(x)
 11. Ensure the ‘view full’ link (character page) shows the correct image for each character.(x)
-12. Make the ‘Search…’ input field filter the list of characters by first name.
+12. Make the ‘Search…’ input field filter the list of characters by first name.(x)
 13. Make the ‘Sort A-Z’ button put the characters in alphabetical order by last name.(x)
 14. In the ‘components’ folder, you will find a view called `Error`. Make sure this is shown whenever somebody tries to access an invalid page.(x)
 15. Make the number slider change the amount of characters displayed on the page.(x)
