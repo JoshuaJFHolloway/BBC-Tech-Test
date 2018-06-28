@@ -15,7 +15,8 @@ class Home extends Component {
       characters: [],
       unsortedList: null,
       sort: false,
-      randomBio: ["Hello, I am a crab", "Hello, I am a horse", "Hello, I am a pig", "Hello, I am a dragon", "Hello, I am a tiger"]
+      randomBio: ["Hello, I am a crab", "Hello, I am a horse", "Hello, I am a pig", "Hello, I am a dragon", "Hello, I am a tiger"],
+      search: null
     };
   }
 
@@ -32,7 +33,11 @@ class Home extends Component {
   }
 
   handleChange(event) {
-    this.setState({characterCount: event.target.value})
+    const state = this.state;
+    const { value, id } = event.target;
+
+    state[id] = value;
+    this.setState({state})
   }
 
   handleClick() {
@@ -57,39 +62,45 @@ class Home extends Component {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
+  numbers(character){
+    if(!this.state.search || (this.state.search === character.firstName)){
+      return true
+    }
+  }
+
   render() {
     const listCharacters = this.state.characters.map((character, index) => {
 
-      if(this.state.characterCount > index){
+      if(this.state.characterCount > index && this.numbers(character)) {
 
-      let imagePath = `/images/${character.image}`;
-      
-      let bioElement;
-      const updatedState = this.state;
-      if (updatedState[character.lastName.toLowerCase()]) {
-        bioElement = (
-          <div className="bio">{this.state.randomBio[this.getRandomInt(5)]}</div>
+        let imagePath = `/images/${character.image}`;
+
+        let bioElement;
+        const updatedState = this.state;
+        if (updatedState[character.lastName.toLowerCase()]) {
+          bioElement = (
+            <div className="bio">{this.state.randomBio[this.getRandomInt(5)]}</div>
+          )
+        }
+
+        return (
+          <div key={index} className={`character border-${this.getRandomInt(5)}`}>
+            <Link to={`/${character.id}`} className="viewFull">
+              <FontAwesomeIcon icon={faExpandArrowsAlt}/>
+            </Link>
+            <div className={"name"}>
+              <h2>{character.firstName} {character.lastName}</h2>
+            </div>
+            <div className="content">
+              <div className="characterPic">
+                <img src={imagePath} alt="Character"/>
+              </div>
+              <button onClick={() => this.showBio(character)}>View bio</button>
+              {bioElement}
+            </div>
+          </div>
         )
       }
-
-      return (
-        <div key={index} className={`character border-${this.getRandomInt(5)}`}>
-          <Link to={`/${character.id}`} className="viewFull">
-            <FontAwesomeIcon icon={faExpandArrowsAlt} />
-          </Link>
-          <div className={"name"}>
-            <h2>{character.firstName} {character.lastName}</h2>
-          </div>
-          <div className="content">
-            <div className="characterPic">
-              <img src={imagePath} alt="Character" />
-            </div>
-            <button onClick={ () => this.showBio(character) }>View bio</button>
-            {bioElement}
-          </div>
-        </div>
-      )
-    }
   });
 
     return (
@@ -102,13 +113,17 @@ class Home extends Component {
           </div>
 
           <div className="inputBox">
-            <input type="text" placeholder="Search..."/>
+            <input
+              onChange={ this.handleChange.bind(this) }
+              id="search"
+              type="text"
+              placeholder="Search..."/>
           </div>
 
           <div className="inputBox">
             <p>How many characters to show?</p>
             <input 
-              id="slider" 
+              id="characterCount"
               type="range" 
               min="0" max="10" step="1" 
               value={this.state.characterCount} 

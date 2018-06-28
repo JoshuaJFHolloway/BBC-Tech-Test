@@ -22,15 +22,15 @@ You should have the project ‘Junior Web Developer Task’ open in front of you
 
 Complete the steps below in order.
 
-1. Put the characters into a grid of 4 columns across.
+1. Put the characters into a grid of 4 columns across.(x)
 2. Ensure the characters are stacked into a single column in a mobile view size.(x)
-3. Ensure the grid is centered within the browser, with the character names centered within their containers.
+3. Ensure the grid is centered within the browser, with the character names centered within their containers.(x)
 4. Make sure the character images are about a 3rd of the width of the character box.
 5. Replace ‘dummy bio text’ with character biographies (you can use lorum ipsum).(x)
 6. The styles in the Home component have various classes to give the containers different border colours. Ensure that each character container has a random border colour upon each load.(x)
 7. Ensure the ‘view bio’ button only shows the bio of the appropriate character.(x)
 8. Make the images fade in upon page load.
-9. Font Awesome has been installed as a dependency ("font-awesome"). You will find the Font Awesome library inside the ‘node_modules‘ folder. Use it to replace the ‘view full’ text with an appropriate icon.
+9. Font Awesome has been installed as a dependency ("font-awesome"). You will find the Font Awesome library inside the ‘node_modules‘ folder. Use it to replace the ‘view full’ text with an appropriate icon.(x)
 10. Add a Google Font to the page, selecting a different one for Headings and bios.(x)
 11. Ensure the ‘view full’ link (character page) shows the correct image for each character.(x)
 12. Make the ‘Search…’ input field filter the list of characters by first name.
